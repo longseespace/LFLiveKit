@@ -355,7 +355,7 @@
     NSMutableString *desc = @"".mutableCopy;
     [desc appendFormat:@"<LFLiveVideoConfiguration: %p>", self];
     [desc appendFormat:@" videoSize:%@", NSStringFromCGSize(self.videoSize)];
-    [desc appendFormat:@" videoSizeRespectingAspectRatio:%zi",self.videoSizeRespectingAspectRatio];
+    [desc appendFormat:@" videoSizeRespectingAspectRatio:%i",self.videoSizeRespectingAspectRatio];
     [desc appendFormat:@" videoFrameRate:%zi", self.videoFrameRate];
     [desc appendFormat:@" videoMaxFrameRate:%zi", self.videoMaxFrameRate];
     [desc appendFormat:@" videoMinFrameRate:%zi", self.videoMinFrameRate];
@@ -366,7 +366,7 @@
     [desc appendFormat:@" avSessionPreset:%@", self.avSessionPreset];
     [desc appendFormat:@" sessionPreset:%zi", self.sessionPreset];
     [desc appendFormat:@" outputImageOrientation:%zi", self.outputImageOrientation];
-    [desc appendFormat:@" autorotate:%zi", self.autorotate];
+    [desc appendFormat:@" autorotate:%i", self.autorotate];
     return desc;
 }
 
