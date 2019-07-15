@@ -16,7 +16,11 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoSessionPreset){
     /// 中分辨率
     LFCaptureSessionPreset540x960 = 1,
     /// 高分辨率
-    LFCaptureSessionPreset720x1280 = 2
+    LFCaptureSessionPreset720x1280 = 2,
+	///
+	LFCaptureSessionPreset1920x1080 = 3,
+	///
+	LFCaptureSessionPreset3840x2160 = 4
 };
 
 /// 视频质量
@@ -37,8 +41,12 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
     LFLiveVideoQuality_High1 = 6,
     /// 分辨率： 720 *1280 帧数：24 码率：1200Kps
     LFLiveVideoQuality_High2 = 7,
-    /// 分辨率： 720 *1280 帧数：30 码率：1200Kps
+    /// 分辨率： 720 *1280 帧数：30 码率：5000Mbps
     LFLiveVideoQuality_High3 = 8,
+	/// 分辨率： 1080 *1280 帧数：60 码率：8000Mbps
+	LFLiveVideoQuality_FHD = 9,
+	/// 分辨率： 2160 *3840 帧数：60 码率：1200Kps
+	LFLiveVideoQuality_4K = 10,
     /// 默认配置
     LFLiveVideoQuality_Default = LFLiveVideoQuality_Low2
 };
