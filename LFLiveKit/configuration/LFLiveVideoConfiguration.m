@@ -120,9 +120,9 @@
         configuration.videoFrameRate = 30;
         configuration.videoMaxFrameRate = 30;
         configuration.videoMinFrameRate = 15;
-        configuration.videoBitRate = 5000 * 1000;
-        configuration.videoMaxBitRate = 4000 * 1000;
-        configuration.videoMinBitRate = 1440 * 1000;
+        configuration.videoBitRate = 1200 * 1000;
+        configuration.videoMaxBitRate = 1440 * 1000;
+        configuration.videoMinBitRate = 500 * 1000;
         configuration.videoSize = CGSizeMake(720, 1280);
     }
         break;
@@ -130,10 +130,10 @@
 		case LFLiveVideoQuality_FHD:{
 			configuration.sessionPreset = LFCaptureSessionPreset1920x1080;
 			configuration.videoFrameRate = 30;
-			configuration.videoMaxFrameRate = 60;
+			configuration.videoMaxFrameRate = 30;
 			configuration.videoMinFrameRate = 15;
 			configuration.videoBitRate = 5000 * 1000;
-			configuration.videoMaxBitRate = 5000 * 1000;
+			configuration.videoMaxBitRate = 6000 * 1000;
 			configuration.videoMinBitRate = 2500 * 1000;
 			configuration.videoSize = CGSizeMake(1080, 1920);
 		}
@@ -142,7 +142,7 @@
 		case LFLiveVideoQuality_4K:{
 			configuration.sessionPreset = LFCaptureSessionPreset3840x2160;
 			configuration.videoFrameRate = 30;
-			configuration.videoMaxFrameRate = 60;
+			configuration.videoMaxFrameRate = 30;
 			configuration.videoMinFrameRate = 15;
 			configuration.videoBitRate = 15100 * 1000;
 			configuration.videoMaxBitRate = 15100 * 1000;
@@ -155,7 +155,7 @@
         break;
     }
     configuration.sessionPreset = [configuration supportSessionPreset:configuration.sessionPreset];
-    configuration.videoMaxKeyframeInterval = configuration.videoFrameRate*2;
+    configuration.videoMaxKeyframeInterval = 2;
     configuration.outputImageOrientation = outputImageOrientation;
     CGSize size = configuration.videoSize;
     if(configuration.landscape) {
