@@ -83,6 +83,12 @@ typedef NS_ENUM(NSInteger,LFLiveCaptureTypeMask) {
 /** The torch control camera zoom scale default 1.0, between 1.0 ~ 3.0 */
 @property (nonatomic, assign) CGFloat zoomScale;
 
+/** The continuousAutoFocus control continuousAutoFocus is on or off */
+@property (nonatomic, assign) BOOL continuousAutoFocus;
+
+/** The continuousAutoExposure control continuousAutoExposure is on or off */
+@property (nonatomic, assign) BOOL continuousAutoExposure;
+
 /** The torch control capture flash is on or off */
 @property (nonatomic, assign) BOOL torch;
 

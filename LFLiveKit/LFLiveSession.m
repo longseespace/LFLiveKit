@@ -302,6 +302,26 @@
     return self.videoCaptureSource.zoomScale;
 }
 
+- (void)setContinuousAutoFocus:(BOOL)continuousAutoFocus {
+	[self willChangeValueForKey:@"continuousAutoFocus"];
+	[self.videoCaptureSource setContinuousAutoFocus:continuousAutoFocus];
+	[self didChangeValueForKey:@"continuousAutoFocus"];
+}
+
+- (BOOL)continuousAutoFocus {
+	return self.videoCaptureSource.continuousAutoFocus;
+}
+
+- (void)setContinuousAutoExposure:(BOOL)continuousAutoExposure {
+	[self willChangeValueForKey:@"continuousAutoExposure"];
+	[self.videoCaptureSource setContinuousAutoExposure:continuousAutoExposure];
+	[self didChangeValueForKey:@"continuousAutoExposure"];
+}
+
+- (BOOL)continuousAutoExposure {
+	return self.videoCaptureSource.continuousAutoExposure;
+}
+
 - (void)setTorch:(BOOL)torch {
     [self willChangeValueForKey:@"torch"];
     [self.videoCaptureSource setTorch:torch];

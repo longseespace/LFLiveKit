@@ -44,6 +44,12 @@
 /** The mirror control mirror of front camera is on or off */
 @property (nonatomic, assign) BOOL mirror;
 
+/** The continuousAutoFocus control continuousAutoFocus is on or off */
+@property (nonatomic, assign) BOOL continuousAutoFocus;
+
+/** The continuousAutoExposure control continuousAutoExposure is on or off */
+@property (nonatomic, assign) BOOL continuousAutoExposure;
+
 /** The beautyLevel control beautyFace Level, default 0.5, between 0.0 ~ 1.0 */
 @property (nonatomic, assign) CGFloat beautyLevel;
 

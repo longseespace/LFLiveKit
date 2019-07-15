@@ -66,8 +66,8 @@
         NSInteger encodeCount = totalSize/self.configuration.bufferLength;
         char *totalBuf = malloc(totalSize);
         char *p = totalBuf;
-        
-        memset(totalBuf, (int)totalSize, 0);
+		
+		memset(totalBuf, 0, (int)totalSize);
         memcpy(totalBuf, leftBuf, leftLength);
         memcpy(totalBuf + leftLength, audioData.bytes, audioData.length);
         
