@@ -14,41 +14,33 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoSessionPreset){
     /// 低分辨率
     LFCaptureSessionPreset360x640 = 0,
     /// 中分辨率
-    LFCaptureSessionPreset540x960 = 1,
+    LFCaptureSessionPreset480x854 = 1,
+	///
+	LFCaptureSessionPreset540x960 = 2,
     /// 高分辨率
-    LFCaptureSessionPreset720x1280 = 2,
+    LFCaptureSessionPreset720x1280 = 3,
 	///
-	LFCaptureSessionPreset1920x1080 = 3,
+	LFCaptureSessionPreset1920x1080 = 4,
 	///
-	LFCaptureSessionPreset3840x2160 = 4
+	LFCaptureSessionPreset3840x2160 = 5
 };
 
 /// 视频质量
 typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
-    /// 分辨率： 360 *640 帧数：15 码率：500Kps
-    LFLiveVideoQuality_Low1 = 0,
-    /// 分辨率： 360 *640 帧数：24 码率：800Kps
-    LFLiveVideoQuality_Low2 = 1,
-    /// 分辨率： 360 *640 帧数：30 码率：800Kps
-    LFLiveVideoQuality_Low3 = 2,
-    /// 分辨率： 540 *960 帧数：15 码率：800Kps
-    LFLiveVideoQuality_Medium1 = 3,
-    /// 分辨率： 540 *960 帧数：24 码率：800Kps
-    LFLiveVideoQuality_Medium2 = 4,
-    /// 分辨率： 540 *960 帧数：30 码率：800Kps
-    LFLiveVideoQuality_Medium3 = 5,
-    /// 分辨率： 720 *1280 帧数：15 码率：1000Kps
-    LFLiveVideoQuality_High1 = 6,
-    /// 分辨率： 720 *1280 帧数：24 码率：1200Kps
-    LFLiveVideoQuality_High2 = 7,
-    /// 分辨率： 720 *1280 帧数：30 码率：5000Mbps
-    LFLiveVideoQuality_High3 = 8,
-	/// 分辨率： 1080 *1280 帧数：60 码率：8000Mbps
-	LFLiveVideoQuality_FHD = 9,
-	/// 分辨率： 2160 *3840 帧数：60 码率：1200Kps
-	LFLiveVideoQuality_4K = 10,
+    /// 360
+    LFLiveVideoQuality_SD_360 = 0,
+	/// 480
+	LFLiveVideoQuality_SD_480 = 1,
+	/// 540
+	LFLiveVideoQuality_SD_540 = 2,
+    /// 720
+    LFLiveVideoQuality_HD_720 = 3,
+	/// 1080
+	LFLiveVideoQuality_FullHD_1080 = 4,
+	/// 4K
+	LFLiveVideoQuality_UltraHD_4K = 5,
     /// 默认配置
-    LFLiveVideoQuality_Default = LFLiveVideoQuality_Low2
+    LFLiveVideoQuality_Default = LFLiveVideoQuality_HD_720
 };
 
 @interface LFLiveVideoConfiguration : NSObject<NSCoding, NSCopying>
