@@ -33,11 +33,11 @@
 		configuration.videoFrameRate = 30;
 		configuration.videoMaxFrameRate = 30;
 		configuration.videoMinFrameRate = 15;
-		configuration.videoBitRate = 600 * 1000;
+		configuration.videoBitRate = 1000 * 1000;
 		configuration.videoMaxBitRate = 1200 * 1000;
-		configuration.videoMinBitRate = 400 * 1000;
+		configuration.videoMinBitRate = 800 * 1000;
 		configuration.videoSize = CGSizeMake(360, 640);
-		configuration.videoMaxKeyframeInterval = 30;
+		configuration.videoMaxKeyframeInterval = 60;
     }
         break;
 			
@@ -113,8 +113,8 @@
 	configuration.outputImageOrientation = outputImageOrientation;
     configuration.sessionPreset = [configuration supportSessionPreset:configuration.sessionPreset];
 	
-    CGSize size = configuration.videoSize;
     if (configuration.landscape) {
+		CGSize size = configuration.videoSize;
         configuration.videoSize = CGSizeMake(size.height, size.width);
     }
 	
