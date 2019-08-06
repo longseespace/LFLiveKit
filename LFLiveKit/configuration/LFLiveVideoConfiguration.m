@@ -33,39 +33,39 @@
     LFLiveVideoConfiguration *configuration = [LFLiveVideoConfiguration new];
 	
     switch (videoQuality) {
-    case LFLiveVideoQuality_SD_360: {
-		configuration.sessionPreset = LFCaptureSessionPreset360x640;
-    }
-        break;
+			case LFLiveVideoQuality_SD_360: {
+				configuration.sessionPreset = LFCaptureSessionPreset360x640;
+			}
+			break;
 			
-	case LFLiveVideoQuality_SD_480: {
-		configuration.sessionPreset = LFCaptureSessionPreset480x854;
-	}
-		break;
+			case LFLiveVideoQuality_SD_480: {
+				configuration.sessionPreset = LFCaptureSessionPreset480x854;
+			}
+			break;
 			
-	case LFLiveVideoQuality_SD_540:{
-		configuration.sessionPreset = LFCaptureSessionPreset540x960;
-	}
-		break;
+			case LFLiveVideoQuality_SD_540: {
+				configuration.sessionPreset = LFCaptureSessionPreset540x960;
+			}
+			break;
 			
-    case LFLiveVideoQuality_HD_720:{
-		configuration.sessionPreset = LFCaptureSessionPreset720x1280;
-    }
-        break;
+			case LFLiveVideoQuality_HD_720: {
+				configuration.sessionPreset = LFCaptureSessionPreset720x1280;
+			}
+			break;
 			
-	case LFLiveVideoQuality_FullHD_1080:{
-		configuration.sessionPreset = LFCaptureSessionPreset1920x1080;
-	}
-		break;
+			case LFLiveVideoQuality_FullHD_1080: {
+				configuration.sessionPreset = LFCaptureSessionPreset1920x1080;
+			}
+			break;
 			
-	case LFLiveVideoQuality_UltraHD_4K:{
-		configuration.sessionPreset = LFCaptureSessionPreset3840x2160;
-	}
-		break;
+			case LFLiveVideoQuality_UltraHD_4K: {
+				configuration.sessionPreset = LFCaptureSessionPreset3840x2160;
+			}
+			break;
     }
 	
 	configuration.outputImageOrientation = outputImageOrientation;
-    configuration.sessionPreset = [configuration supportSessionPreset:configuration.sessionPreset];
+    configuration.sessionPreset = [configuration supportSessionPreset: configuration.sessionPreset];
 	
 	if (encode) {
 		switch (configuration.sessionPreset) {
@@ -286,23 +286,19 @@
 }
 
 - (void)setVideoMaxBitRate:(NSUInteger)videoMaxBitRate {
-    if (videoMaxBitRate <= _videoBitRate) return;
-    _videoMaxBitRate = videoMaxBitRate;
+    _videoMaxBitRate = MAX(videoMaxBitRate, _videoBitRate);
 }
 
 - (void)setVideoMinBitRate:(NSUInteger)videoMinBitRate {
-    if (videoMinBitRate >= _videoBitRate) return;
-    _videoMinBitRate = videoMinBitRate;
+    _videoMinBitRate = MIN(videoMinBitRate, _videoBitRate);
 }
 
 - (void)setVideoMaxFrameRate:(NSUInteger)videoMaxFrameRate {
-    if (videoMaxFrameRate <= _videoFrameRate) return;
-    _videoMaxFrameRate = videoMaxFrameRate;
+    _videoMaxFrameRate = MAX(videoMaxFrameRate, _videoFrameRate);
 }
 
 - (void)setVideoMinFrameRate:(NSUInteger)videoMinFrameRate {
-    if (videoMinFrameRate >= _videoFrameRate) return;
-    _videoMinFrameRate = videoMinFrameRate;
+	_videoMinFrameRate = MIN(videoMinFrameRate, _videoFrameRate);
 }
 
 - (void)setSessionPreset:(LFLiveVideoSessionPreset)sessionPreset{
