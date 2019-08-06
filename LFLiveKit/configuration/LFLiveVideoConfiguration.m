@@ -336,6 +336,11 @@
             videoSize = CGSizeMake(360, 640);
         }
             break;
+		case LFCaptureSessionPreset480x854:{
+			videoSize = CGSizeMake(480, 854);
+		}
+		break;
+			
         case LFCaptureSessionPreset540x960:{
             videoSize = CGSizeMake(540, 960);
         }
@@ -354,11 +359,6 @@
 			videoSize = CGSizeMake(2160, 3840);
 		}
 			break;
-            
-        default:{
-            videoSize = CGSizeMake(360, 640);
-        }
-            break;
     }
     
     if (self.landscape){
