@@ -37,7 +37,7 @@
 		configuration.videoMaxBitRate = 1200 * 1000;
 		configuration.videoMinBitRate = 400 * 1000;
 		configuration.videoSize = CGSizeMake(360, 640);
-		configuration.videoMaxKeyframeInterval = 1;
+		configuration.videoMaxKeyframeInterval = 30;
     }
         break;
 			
@@ -46,11 +46,11 @@
 		configuration.videoFrameRate = 30;
 		configuration.videoMaxFrameRate = 30;
 		configuration.videoMinFrameRate = 15;
-		configuration.videoBitRate = 1200 * 1000;
-		configuration.videoMaxBitRate = 1600 * 1000;
-		configuration.videoMinBitRate = 800 * 1000;
+		configuration.videoBitRate = 2000 * 1000;
+		configuration.videoMaxBitRate = 2500 * 1000;
+		configuration.videoMinBitRate = 1500 * 1000;
 		configuration.videoSize = CGSizeMake(480, 854);
-		configuration.videoMaxKeyframeInterval = 1;
+		configuration.videoMaxKeyframeInterval = 60;
 	}
 		break;
 			
@@ -59,11 +59,11 @@
 		configuration.videoFrameRate = 30;
 		configuration.videoMaxFrameRate = 30;
 		configuration.videoMinFrameRate = 15;
-		configuration.videoBitRate = 1000 * 1000;
-		configuration.videoMaxBitRate = 1200 * 1000;
-		configuration.videoMinBitRate = 500 * 1000;
-		configuration.videoSize = CGSizeMake(540, 960);
-		configuration.videoMaxKeyframeInterval = 1;
+		configuration.videoBitRate = 3000 * 1000;
+		configuration.videoMaxBitRate = 3000 * 1000;
+		configuration.videoMinBitRate = 2000 * 1000;
+		configuration.videoSize = CGSizeMake(480, 854);
+		configuration.videoMaxKeyframeInterval = 60;
 	}
 		break;
 			
@@ -72,11 +72,11 @@
 		configuration.videoFrameRate = 30;
 		configuration.videoMaxFrameRate = 30;
 		configuration.videoMinFrameRate = 15;
-		configuration.videoBitRate = 2000 * 1000;
-		configuration.videoMaxBitRate = 3000 * 1000;
-		configuration.videoMinBitRate = 1500 * 1000;
+		configuration.videoBitRate = 3500 * 1000;
+		configuration.videoMaxBitRate = 4000 * 1000;
+		configuration.videoMinBitRate = 3000 * 1000;
 		configuration.videoSize = CGSizeMake(720, 1280);
-		configuration.videoMaxKeyframeInterval = 1;
+		configuration.videoMaxKeyframeInterval = 60;
     }
         break;
 			
@@ -85,11 +85,11 @@
 		configuration.videoFrameRate = 30;
 		configuration.videoMaxFrameRate = 30;
 		configuration.videoMinFrameRate = 15;
-		configuration.videoBitRate = 4500 * 1000;
-		configuration.videoMaxBitRate = 6000 * 1000;
-		configuration.videoMinBitRate = 3000 * 1000;
+		configuration.videoBitRate = 6000 * 1000;
+		configuration.videoMaxBitRate = 7000 * 1000;
+		configuration.videoMinBitRate = 5000 * 1000;
 		configuration.videoSize = CGSizeMake(1080, 1920);
-		configuration.videoMaxKeyframeInterval = 5;
+		configuration.videoMaxKeyframeInterval = 60;
 	}
 		break;
 			
@@ -98,11 +98,11 @@
 		configuration.videoFrameRate = 30;
 		configuration.videoMaxFrameRate = 30;
 		configuration.videoMinFrameRate = 15;
-		configuration.videoBitRate = 12000 * 1000;
-		configuration.videoMaxBitRate = 18000 * 1000;
-		configuration.videoMinBitRate = 8000 * 1000;
+		configuration.videoBitRate = 18000 * 1000;
+		configuration.videoMaxBitRate = 22000 * 1000;
+		configuration.videoMinBitRate = 14000 * 1000;
 		configuration.videoSize = CGSizeMake(2160, 3840);
-		configuration.videoMaxKeyframeInterval = 5;
+		configuration.videoMaxKeyframeInterval = 60;
 	}
 		break;
 			
