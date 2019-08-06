@@ -52,6 +52,7 @@ typedef NS_ENUM (NSUInteger, LFLiveVideoQuality){
 
 /// 视频配置(质量 & 是否是横屏)
 + (instancetype)defaultConfigurationForQuality:(LFLiveVideoQuality)videoQuality outputImageOrientation:(UIInterfaceOrientation)outputImageOrientation;
++ (instancetype)defaultConfigurationForQuality:(LFLiveVideoQuality)videoQuality outputImageOrientation:(UIInterfaceOrientation)outputImageOrientation encode:(BOOL)encode;
 
 #pragma mark - Attribute
 ///=============================================================================
