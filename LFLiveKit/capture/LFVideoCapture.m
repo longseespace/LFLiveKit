@@ -420,21 +420,19 @@
     UIInterfaceOrientation statusBar = [[UIApplication sharedApplication] statusBarOrientation];
 
     if (self.configuration.autorotate){
-		self.videoCamera.outputImageOrientation = statusBar;
-		
-//        if (self.configuration.landscape) {
-//            if (statusBar == UIInterfaceOrientationLandscapeLeft) {
-//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeRight;
-//            } else if (statusBar == UIInterfaceOrientationLandscapeRight) {
-//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeLeft;
-//            }
-//        } else {
-//            if (statusBar == UIInterfaceOrientationPortrait) {
-//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-//            } else if (statusBar == UIInterfaceOrientationPortraitUpsideDown) {
-//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortraitUpsideDown;
-//            }
-//        }
+        if (self.configuration.landscape) {
+            if (statusBar == UIInterfaceOrientationLandscapeLeft) {
+                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeLeft;
+            } else if (statusBar == UIInterfaceOrientationLandscapeRight) {
+                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeRight;
+            }
+        } else {
+            if (statusBar == UIInterfaceOrientationPortrait) {
+                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+            } else if (statusBar == UIInterfaceOrientationPortraitUpsideDown) {
+                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortraitUpsideDown;
+            }
+        }
     }
 }
 
