@@ -393,9 +393,9 @@
 }
 
 - (void)reloadMirror{
-    if(self.mirror && self.captureDevicePosition == AVCaptureDevicePositionFront){
+    if (self.mirror && self.captureDevicePosition == AVCaptureDevicePositionFront){
         self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
-    }else{
+    } else {
         self.videoCamera.horizontallyMirrorFrontFacingCamera = NO;
     }
 }
@@ -419,20 +419,22 @@
     NSLog(@"UIApplicationWillChangeStatusBarOrientationNotification. UserInfo: %@", notification.userInfo);
     UIInterfaceOrientation statusBar = [[UIApplication sharedApplication] statusBarOrientation];
 
-    if(self.configuration.autorotate){
-        if (self.configuration.landscape) {
-            if (statusBar == UIInterfaceOrientationLandscapeLeft) {
-                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeRight;
-            } else if (statusBar == UIInterfaceOrientationLandscapeRight) {
-                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeLeft;
-            }
-        } else {
-            if (statusBar == UIInterfaceOrientationPortrait) {
-                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortraitUpsideDown;
-            } else if (statusBar == UIInterfaceOrientationPortraitUpsideDown) {
-                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-            }
-        }
+    if (self.configuration.autorotate){
+		self.videoCamera.outputImageOrientation = statusBar;
+		
+//        if (self.configuration.landscape) {
+//            if (statusBar == UIInterfaceOrientationLandscapeLeft) {
+//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeRight;
+//            } else if (statusBar == UIInterfaceOrientationLandscapeRight) {
+//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationLandscapeLeft;
+//            }
+//        } else {
+//            if (statusBar == UIInterfaceOrientationPortrait) {
+//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//            } else if (statusBar == UIInterfaceOrientationPortraitUpsideDown) {
+//                self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortraitUpsideDown;
+//            }
+//        }
     }
 }
 
