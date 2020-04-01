@@ -109,6 +109,26 @@
     self.socket = nil;
 }
 
+- (void)pushAudioBuffer:(nullable CMSampleBufferRef)sampleBuffer {
+	AudioBufferList audioBufferList;
+	CMBlockBufferRef blockBuffer;
+	
+	CMSampleBufferGetAudioBufferListWithRetainedBlockBuffer(sampleBuffer, NULL, &audioBufferList, sizeof(audioBufferList), NULL, NULL, 0, &blockBuffer);
+	
+	for( int y=0; y<audioBufferList.mNumberBuffers; y++ ) {
+		AudioBuffer audioBuffer = audioBufferList.mBuffers[y];
+		void* audio = audioBuffer.mData;
+		NSData *data = [NSData dataWithBytes:audio length:audioBuffer.mDataByteSize];
+		[self pushAudio:data];
+	}
+	CFRelease(blockBuffer);
+}
+
+- (void)pushVideoBuffer:(nullable CMSampleBufferRef)sampleBuffer {
+	CVPixelBufferRef pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+	[self pushVideo:pixelBuffer];
+}
+
 - (void)pushVideo:(nullable CVPixelBufferRef)pixelBuffer{
     if(self.captureType & LFLiveInputMaskVideo){
         if (self.uploading) [self.videoEncoder encodeVideoData:pixelBuffer timeStamp:NOW];
