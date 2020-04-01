@@ -48,7 +48,7 @@
         VTCompressionSessionCompleteFrames(compressionSession, kCMTimeInvalid);
 
         VTCompressionSessionInvalidate(compressionSession);
-        CFRelease(compressionSession);
+//        CFRelease(compressionSession);
         compressionSession = NULL;
     }
 
