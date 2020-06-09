@@ -227,7 +227,8 @@ void PILI_RTMP_Free(PILI_RTMP *r) {
 void PILI_RTMP_Init(PILI_RTMP *r) {
 #ifdef CRYPTO
     if (!RTMP_TLS_ctx)
-        RTMP_TLS_Init();
+        //RTMP_TLS_Init();
+        PILI_RTMP_TLS_Init(); // ATIQ EDITED
 #endif
 
     memset(r, 0, sizeof(PILI_RTMP));
@@ -709,11 +710,11 @@ int PILI_RTMP_SetupURL(PILI_RTMP *r, const char *url, RTMPError *error) {
         }
     }
 
-#ifdef CRYPTO
+/*#ifdef CRYPTO
     if ((r->Link.lFlags & RTMP_LF_SWFV) && r->Link.swfUrl.av_len)
-        RTMP_HashSWF(r->Link.swfUrl.av_val, &r->Link.SWFSize,
+        PILI_RTMP_HashSWF(r->Link.swfUrl.av_val, &r->Link.SWFSize,
                      (unsigned char *)r->Link.SWFHash, r->Link.swfAge);
-#endif
+#endif*/
 
     if (r->Link.port == 0) {
         if (r->Link.protocol & RTMP_FEATURE_SSL)
@@ -878,20 +879,20 @@ int PILI_RTMP_Connect1(PILI_RTMP *r, PILI_RTMPPacket *cp, RTMPError *error) {
             }
 
             RTMP_Log(RTMP_LOGERROR, "%s, TLS_Connect failed", __FUNCTION__);
-            RTMP_Close(r, NULL);
+            PILI_RTMP_Close(r, NULL);
             return FALSE;
         }
 #else
         if (error) {
             char msg[100];
             memset(msg, 0, 100);
-            strcat(msg, "No SSL/TLS support.");
+            strcat(msg, "No SSL/TLS support 101.");
             RTMPError_Alloc(error, strlen(msg));
             error->code = RTMPErrorNoSSLOrTLSSupport;
             strcpy(error->message, msg);
         }
 
-        RTMP_Log(RTMP_LOGERROR, "%s, no SSL/TLS support", __FUNCTION__);
+        RTMP_Log(RTMP_LOGERROR, "%s, no SSL/TLS support 102", __FUNCTION__);
         PILI_RTMP_Close(r, NULL);
         return FALSE;
 
@@ -2767,7 +2768,7 @@ static void
 
         /* respond with HMAC SHA256 of decompressed SWF, key is the 30byte player key, also the last 30 bytes of the server handshake are applied */
         if (r->Link.SWFSize) {
-            PILI_RTMP_SendCtrl(r, 0x1B, 0, 0);
+            PILI_RTMP_SendCtrl(r, 0x1B, 0, 0, NULL);
         } else {
             RTMP_Log(RTMP_LOGERROR,
                      "%s: Ignoring SWFVerification request, use --swfVfy!",
